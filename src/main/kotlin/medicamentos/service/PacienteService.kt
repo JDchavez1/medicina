@@ -46,4 +46,10 @@ class PacienteService {
             )
         }
     }
+    fun delete (id:Long):Boolean?{
+        pacienteRepository.findById(id)?:
+        throw Exception()
+        pacienteRepository.deleteById(id!!)
+        return true
+    }
 }

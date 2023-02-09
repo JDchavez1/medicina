@@ -24,4 +24,8 @@ class TratamientoController {
     fun  save (@RequestBody tratamiento: Tratamiento): Tratamiento {
         return tratamientoService.save(tratamiento)
     }
+    @DeleteMapping("/delete/{id}")
+    fun delete(@PathVariable("id") id: Long): Boolean?{
+        return tratamientoService.delete(id)
+    }
 }

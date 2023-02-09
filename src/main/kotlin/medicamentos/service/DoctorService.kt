@@ -35,4 +35,10 @@ class DoctorService {
             )
         }
     }
+    fun delete (id:Long):Boolean?{
+        doctorRepository.findById(id)?:
+        throw Exception()
+        doctorRepository.deleteById(id!!)
+        return true
+    }
 }

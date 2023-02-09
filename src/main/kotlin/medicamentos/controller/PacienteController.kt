@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/pac")
-@CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT])
+@CrossOrigin(methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.PATCH, RequestMethod.PUT, RequestMethod.DELETE])
 
 class PacienteController {
     @Autowired
@@ -28,4 +28,11 @@ class PacienteController {
     fun  save (@RequestBody paciente: Paciente): Paciente {
         return pacienteService.save(paciente)
     }
+    @DeleteMapping("/delete/{id}")
+    fun delete(@PathVariable("id") id: Long): Boolean?{
+    return pacienteService.delete(id)
+    }
 }
+
+
+

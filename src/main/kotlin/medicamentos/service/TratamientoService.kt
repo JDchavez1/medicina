@@ -38,4 +38,10 @@ class TratamientoService {
             )
         }
     }
+    fun delete (id:Long):Boolean?{
+        tratamientoRepository.findById(id)?:
+        throw Exception()
+        tratamientoRepository.deleteById(id!!)
+        return true
+    }
 }
